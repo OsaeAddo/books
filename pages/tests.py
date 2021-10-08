@@ -1,4 +1,3 @@
-from django.http import response
 from django.test import SimpleTestCase
 from django.urls import reverse
 
@@ -22,7 +21,7 @@ class HomePageTests(SimpleTestCase):
         self.assertContains(response, 'Homepage')
 
     def test_homepage_does_not_contain_incorrect_content(self):
-        reponse = self.client.get('/')
+        response = self.client.get('/')
         self.assertNotContains(response, 'Hi there! I should not be on this page.')
 
     
