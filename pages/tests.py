@@ -21,4 +21,8 @@ class HomePageTests(SimpleTestCase):
         response = self.client.get('/')
         self.assertContains(response, 'Homepage')
 
+    def test_homepage_does_not_contain_incorrect_content(self):
+        reponse = self.client.get('/')
+        self.assertNotContains(response, 'Hi there! I should not be on this page.')
+
     
