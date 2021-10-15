@@ -1,6 +1,9 @@
 from django.shortcuts import render
+from django.urls.base import reverse_lazy
+from django.views import generic
 
-# Create your views here.
+from .forms import CustomUserCreationForm
+
 
 class SignupPageView(generic.CreateView):
     form_class = CustomUserCreationForm
